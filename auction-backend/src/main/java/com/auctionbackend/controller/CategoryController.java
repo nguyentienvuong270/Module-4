@@ -14,13 +14,11 @@ public class CategoryController {
 
     private final CategoryRepository categoryRepository;
 
-    // GET: lấy danh sách loại sản phẩm
     @GetMapping
     public List<Category> getAll() {
         return categoryRepository.findAll();
     }
 
-    // POST: tạo loại sản phẩm (BẮT BUỘC)
     @PostMapping
     public Category create(@RequestBody Category category) {
         if (category.getName() == null || category.getName().isBlank()) {
