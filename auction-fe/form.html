@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm / Sửa sản phẩm</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<h2 id="title">Thêm sản phẩm</h2>
+
+<form onsubmit="submitForm(event)">
+    <input type="hidden" id="id">
+
+    <div>
+        <label>Tên sản phẩm</label><br>
+        <input id="name">
+    </div>
+
+    <div>
+        <label>Giá khởi điểm</label><br>
+        <input id="price" type="number">
+    </div>
+
+    <div>
+        <label>Trạng thái</label><br>
+        <input id="status">
+    </div>
+
+    <div>
+        <label>Loại sản phẩm</label><br>
+        <select id="categoryId"></select>
+    </div>
+
+    <br>
+    <button type="submit">Lưu</button>
+    <button type="button" onclick="back()">Quay lại</button>
+</form>
+
+<script src="api.js"></script>
+<script src="form.js"></script>
+</body>
+</html>

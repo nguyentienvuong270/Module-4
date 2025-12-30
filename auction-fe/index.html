@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+        th { background: #f2f2f2; }
+        button { margin: 4px; }
+    </style>
+</head>
+<body>
+
+<h2>Quản lý sản phẩm đấu giá</h2>
+
+<!-- SEARCH -->
+<div>
+    <input id="name" placeholder="Tên sản phẩm">
+    <input id="price" placeholder="Giá">
+    <input id="categoryId" placeholder="Loại SP">
+    <button onclick="loadProducts(0)">Tìm</button>
+    <button onclick="clearSearch()">Xóa</button>
+</div>
+
+<br>
+
+<button onclick="goAdd()">➕ Thêm sản phẩm</button>
+<button onclick="deleteSelected()">🗑 Xóa đã chọn</button>
+
+<br><br>
+
+<table>
+    <thead>
+        <tr>
+            <th><input type="checkbox" onclick="toggleAll(this)"></th>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Trạng thái</th>
+            <th>Loại</th>
+            <th>Sửa</th>
+        </tr>
+    </thead>
+    <tbody id="product-body"></tbody>
+</table>
+
+<br>
+
+<button onclick="prevPage()">Prev</button>
+<span id="page-info"></span>
+<button onclick="nextPage()">Next</button>
+
+<script src="api.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
